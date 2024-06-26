@@ -1,1 +1,104 @@
+:root {
+  --black: rgba(3, 9, 41, 1);
+  --blue: rgba(16, 47, 206, 1);
+  --blue-90: rgba(60, 85, 215, 1);
+  --blue-60: rgba(169, 180, 239, 1);
+  --blue-30: rgba(212, 218, 248, 1);
+  --blue-10: rgba(234, 237, 253, 1);
+  --gradient-blue: rgba(29, 40, 102, 1);
+}
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
+
+body {
+  background: var(--black);
+  background-image: url(./asset/noise.png);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 42px;
+}
+
+.path {
+  fill: var(--blue-10);
+  transition: fill ease-in-out 250ms;
+}
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  backdrop-filter: blur(1px);
+  position: absolute;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1024px;
+  padding: 20px 30px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a:hover {
+  color: var(--blue-60);
+  transition: color ease-in-out 250ms;
+}
+
+a:hover .path {
+  fill: var(--blue-60);
+}
+
+.links a {
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.btn-navbar {
+  color: var(--blue-60);
+  background-color: transparent;
+  border: 2px solid var(--blue-10);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 13px;
+  transition: all ease-in-out 250ms;
+}
+
+.btn-navbar:hover {
+  border: 2px solid var(--blue);
+  color: var(--blue-10);
+  background-color: rgba(16, 47, 206, 0.5);
+}
+
+.hero {
+  height: 100svh;
+  width: 100svw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
