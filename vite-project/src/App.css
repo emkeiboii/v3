@@ -12,8 +12,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
-  color: white;
+  font-family: "HelveticaNeue-Light", sans-serif;
+  color: var(--blue-30);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,11 +22,70 @@ body {
   background-image: url(./asset/noise.png);
 }
 
+h1 {
+  font-size: clamp(46px, 10vw, 86px);
+  font-family: "HelveticaNeue-Bold", sans-serif;
+  margin-top: -5px;
+  margin-left: -4px;
+}
+
+h2 {
+  font-size: clamp(26px, 5vw, 36px);
+  font-family: "Helvetica Neue", sans-serif;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h3.courier {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 200;
+}
+
+p {
+  font-size: clamp(15px, 2vw, 16px);
+}
+
 .app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 100px 25px;
+  }
+}
+
+.container-vertical {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1024px;
+  padding: 150px 0;
+  width: 100%;
+  flex-direction: column;
+}
+
+.full {
+  min-height: 100svh;
+}
+
+.half {
+  min-height: 50svh;
 }
 
 .logo {
@@ -37,13 +97,13 @@ body {
   transition: fill ease-in-out 250ms;
 }
 
-.navbar-container {
+.navbar-container-layout {
   width: 100%;
   display: flex;
   justify-content: center;
   top: 0;
-  backdrop-filter: blur(1px);
-  position: absolute;
+  backdrop-filter: blur(3px);
+  position: fixed;
 }
 
 .nav-container {
@@ -51,7 +111,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1080px;
   padding: 20px 30px;
 }
 
@@ -95,10 +155,214 @@ li {
   background-color: rgba(16, 47, 206, 0.5);
 }
 
-.hero {
-  height: 100svh;
-  width: 100svw;
+.btn-container {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.btn {
+  background-color: var(--blue-10);
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--blue); /* Default text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btn.icon {
+  padding: 10px 10px;
+}
+
+.btn.cta {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 20px 30px;
+}
+
+.btn:hover {
+  background-color: var(--blue-60);
+}
+
+/* Specific styling for the SVG icons inside buttons */
+.btn-container .btn svg {
+  fill: var(--blue); /* Default icon color */
+  width: 24px; /* Adjust the size as needed */
+  height: 24px; /* Adjust the size as needed */
+  transition: fill 250ms ease-in-out;
+}
+
+/* Change icon color on button hover */
+.btn-container .btn:hover svg {
+  fill: var(--blue); /* Icon color on hover */
+}
+
+/* ------------ HERO ------------ */
+
+span.intro {
+  font-size: 18px;
+  font-family: "HelveticaNeue-Thin", sans-serif;
+}
+
+.roles-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8px;
+}
+
+.hero-roles {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(18px, 4vw, 28px);
+  display: flex;
+  text-decoration: none;
+  width: max-content;
+  transition: color ease-in-out 250ms;
+}
+
+.hero-roles:hover {
+  color: var(--blue-60);
+}
+
+.btn-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* ------------ ABOUT ------------ */
+
+.about-container {
+  background-color: var(--blue-90);
+  border: 2px solid var(--blue);
+  max-width: 1024px;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px var(--blue);
+}
+
+/* ------------ WORKS ------------ */
+
+.works-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.work-section {
+  display: flex;
+  gap: 20px;
+  max-width: 1024px;
+  width: 100%;
+}
+
+.description,
+.img-btns {
+  max-width: 512px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container-vertical {
+    gap: 10px;
+  }
+
+  .works-container {
+    gap: 10px;
+  }
+
+  .work-section {
+    flex-direction: column-reverse;
+    padding: 25px;
+    gap: 10px;
+  }
+
+  .description,
+  .img-btns {
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
+.description {
+  background-color: var(--blue-90);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  gap: 30px;
+}
+
+.description > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description > span {
+  color: var(--blue-60);
+}
+
+.img-btns {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.img-btns img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* ------------ CONTACT ------------ */
+
+.contact-container {
+  max-width: 605px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.text > h3 {
+  font-size: clamp(36px, 10vw, 56px);
+}
+
+.text > p {
+  font-size: clamp(18px, 3vw, 24px);
+}
+
+/* ------------ FOOTER ------------ */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.footer > div {
+  display: flex;
+  gap: 5px;
+}
+
+.footer > span {
+  font-family: "Courier New", Courier, monospace;
 }
