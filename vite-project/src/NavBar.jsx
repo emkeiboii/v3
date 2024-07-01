@@ -12,7 +12,7 @@ function NavBar({ scrollPosition }) {
 
       <ul className="nav-links">
         <li className="links">
-          <a href="#about">about me</a>
+          <a href="#about">about</a>
         </li>
         <li className="links">
           <a href="#works">works</a>

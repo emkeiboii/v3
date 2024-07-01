@@ -6,7 +6,6 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import NavBar from "./NavBar";
 import Works from "./Works";
-
 function App() {
   const [scrollPosition, setScrollPosition] = useState({ y: 0, lastY: 0 });
   const [hideNav, setHideNav] = useState(true);
@@ -32,6 +31,7 @@ function App() {
       setHideNav(false);
     }
   }, [scrollPosition]);
+
   return (
     <div className="app">
       <div className={`navbar-container-layout ${hideNav && "hidenav"}`}>

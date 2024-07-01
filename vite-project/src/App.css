@@ -147,6 +147,14 @@ a:hover .path {
   text-decoration: none;
 }
 
+@media (max-width: 769px) {
+  .links a {
+    font-size: 14px;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+}
 li {
   list-style: none;
 }
@@ -159,6 +167,12 @@ li {
   padding: 10px 15px;
   font-size: 13px;
   transition: all ease-in-out 250ms;
+}
+
+@media (max-width: 769px) {
+  .btn-navbar {
+    display: none;
+  }
 }
 
 .btn-navbar:hover {
@@ -178,7 +192,7 @@ li {
   border: 2px solid var(--blue);
   border-radius: 5px;
   padding: 10px 20px;
-  color: var(--blue); /* Default text color */
+  color: var(--blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,17 +214,15 @@ li {
   background-color: var(--blue-60);
 }
 
-/* Specific styling for the SVG icons inside buttons */
 .btn-container .btn svg {
-  fill: var(--blue); /* Default icon color */
-  width: 24px; /* Adjust the size as needed */
-  height: 24px; /* Adjust the size as needed */
+  fill: var(--blue);
+  width: 24px;
+  height: 24px;
   transition: fill 250ms ease-in-out;
 }
 
-/* Change icon color on button hover */
 .btn-container .btn:hover svg {
-  fill: var(--blue); /* Icon color on hover */
+  fill: var(--blue);
 }
 
 /* ------------ HERO ------------ */
