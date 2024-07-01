@@ -19,7 +19,9 @@
 
 body {
   background: var(--black);
-  background-image: url(./asset/noise.png);
+  background-image: url("./asset/noise.png");
+  background-image: url("./asset/noise.png"),
+    linear-gradient(var(--gradient-blue) 0%, var(--black) 5%);
 }
 
 h1 {
@@ -60,7 +62,7 @@ p {
   justify-content: space-between;
   align-items: center;
   max-width: 1024px;
-  padding: 100px 0;
+  padding: 100px 25px;
   width: 100%;
 }
 
@@ -75,13 +77,13 @@ p {
   align-items: center;
   gap: 40px;
   max-width: 1024px;
-  padding: 150px 0;
+  padding: 150px 25px;
   width: 100%;
   flex-direction: column;
 }
 
 .full {
-  min-height: 100svh;
+  min-height: 90svh;
 }
 
 .half {
@@ -102,17 +104,27 @@ p {
   display: flex;
   justify-content: center;
   top: 0;
-  backdrop-filter: blur(3px);
-  position: fixed;
+  position: sticky;
+  transition: transform ease-out 400ms;
 }
 
-.nav-container {
+.nav-container-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1080px;
   padding: 20px 30px;
+  transition: padding ease-in-out 250ms;
+}
+
+.scrolled {
+  padding: 10px 30px;
+  backdrop-filter: blur(3px);
+}
+
+.hidenav {
+  transform: translateY(-100%);
 }
 
 .nav-links {
@@ -202,6 +214,10 @@ li {
 }
 
 /* ------------ HERO ------------ */
+
+.hero {
+  padding: 0px 25px 100px 25px;
+}
 
 span.intro {
   font-size: 18px;

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Hero() {
   return (
-    <div className="container full" id="home">
+    <div className="container full hero" id="home">
       <div className="hero-container">
         <span className="intro">Ciao! My name is:</span>
         <h1>Mark Lajom</h1>

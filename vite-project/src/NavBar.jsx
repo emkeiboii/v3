@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
 import Logo from "./Logo";
 
-function NavBar() {
+function NavBar({ scrollPosition }) {
   return (
-    <div className="nav-container">
+    <div
+      className={`nav-container-top ${scrollPosition > 0 ? "scrolled" : " "}`}
+    >
       <a href="#home">
         <Logo />
       </a>
