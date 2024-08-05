@@ -19,7 +19,7 @@ function Hero() {
         </div>
         <div className="btn-container">
           <a
-            href="/public/MarkLajomResume050824.pdf"
+            href="/MarkLajomResume050824.pdf"
             download="Mark Lajom CV"
             className="btn"
             aria-label="Download CV"

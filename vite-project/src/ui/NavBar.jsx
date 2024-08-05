@@ -23,7 +23,7 @@ function NavBar({ scrollPosition }) {
       </ul>
 
       <a
-        href="/public/MarkLajomResume050824.pdf"
+        href="/MarkLajomResume050824.pdf"
         download="Mark Lajom CV"
         className="btn-navbar"
         aria-label="Download CV"
