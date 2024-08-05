@@ -19,8 +19,7 @@
 
 body {
   background: var(--black);
-  background-image: url("./asset/noise.png");
-  background-image: url("./asset/noise.png"),
+  background-image: url("../asset/noise.png"),
     linear-gradient(var(--gradient-blue) 0%, var(--black) 5%);
 }
 
@@ -106,6 +105,7 @@ p {
   top: 0;
   position: sticky;
   transition: transform ease-out 400ms;
+  animation: fade-in 2s;
 }
 
 .nav-container-top {
@@ -229,6 +229,7 @@ li {
 
 .hero {
   padding: 0px 25px 100px 25px;
+  animation: fade-in 2s;
 }
 
 span.intro {
@@ -393,4 +394,103 @@ span.intro {
 
 .footer > span {
   font-family: "Courier New", Courier, monospace;
+}
+
+/* ------------ LOADING SCREEN ------------ */
+
+#logo-loading {
+  width: 100px;
+  animation: shrink 0.3s ease-out 4s forwards;
+}
+
+.loading-background {
+  background: var(--black);
+  background-image: url("../asset/noise.png"),
+    linear-gradient(var(--gradient-blue) 0%, var(--black) 22%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100svh;
+  align-items: center;
+  top: 0;
+  position: absolute;
+}
+
+.loading-container {
+  animation: delete 0.2s ease-out 4.1s forwards;
+  z-index: 100;
+}
+
+.path-logo-loading {
+  stroke-dasharray: 396.704;
+  stroke-dashoffset: 396.704;
+  animation: dash 2s ease-out forwards, fill 0.3s ease-in 2.5s forwards;
+  fill: transparent;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 396.704;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #eaedfd;
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes delete {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+/* ------------ SCROLL BAR ------------ */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue-10);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-60);
 }

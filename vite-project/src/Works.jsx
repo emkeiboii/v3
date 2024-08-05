@@ -1,4 +1,4 @@
-import WorkDescription from "./WorkDescription";
+import WorkDescription from "./ui/WorkDescription";
 
 function Works() {
   return (

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 function WorkDescription({ title, paragraph, stack, imgUrl, code }) {
+  console.log(code);
   return (
     <>
       <div className="work-section">
