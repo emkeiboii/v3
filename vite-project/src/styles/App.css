@@ -208,6 +208,10 @@ li {
   transition: background-color 250ms ease-in-out;
 }
 
+.btn a {
+  color: var(--blue);
+}
+
 .btn.icon {
   padding: 10px 10px;
 }
@@ -278,9 +282,17 @@ span.intro {
   padding: 30px 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   border-radius: 5px;
   box-shadow: 0 0 20px var(--blue);
+}
+
+.about-p {
+  line-height: 21px;
+}
+
+.about-p span {
+  font-weight: 600;
 }
 
 /* ------------ WORKS ------------ */

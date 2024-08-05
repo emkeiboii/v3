@@ -21,7 +21,15 @@ function NavBar({ scrollPosition }) {
           <a href="#contact">contact</a>
         </li>
       </ul>
-      <button className="btn-navbar">CV</button>
+
+      <a
+        href="/public/MarkLajomResume050824.pdf"
+        download="Mark Lajom CV"
+        className="btn-navbar"
+        aria-label="Download CV"
+      >
+        CV
+      </a>
     </div>
   );
 }

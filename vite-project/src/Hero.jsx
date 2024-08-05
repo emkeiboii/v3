@@ -18,13 +18,29 @@ function Hero() {
           </a>
         </div>
         <div className="btn-container">
-          <button className="btn">Download CV</button>
-          <button className="btn icon">
+          <a
+            href="/public/MarkLajomResume050824.pdf"
+            download="Mark Lajom CV"
+            className="btn"
+            aria-label="Download CV"
+          >
+            Download CV
+          </a>
+
+          <a
+            className="btn icon"
+            href="https://github.com/emkeiboii"
+            target="_blank"
+          >
             <FaGithub />
-          </button>
-          <button className="btn icon">
+          </a>
+          <a
+            className="btn icon"
+            href="https://www.linkedin.com/in/mark-lajom-008b9b250/"
+            target="_blank"
+          >
             <FaLinkedin />
-          </button>
+          </a>
         </div>
       </div>
     </div>

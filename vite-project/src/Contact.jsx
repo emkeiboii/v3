@@ -6,12 +6,13 @@ function Contact() {
         <div className="text">
           <h3>Get in Touch</h3>
           <p>
-            Looking for new opportunities, i&apos;m always
-            <span>(most of the time)</span>
-            open to learn, work and create.
+            Looking for new opportunities, always open to learn, work and
+            create.
           </p>
         </div>
-        <button className="btn cta">Email me</button>
+        <a className="btn cta" href="mailto: marklajom.work@gmail.com">
+          Email me
+        </a>
       </div>
     </div>
   );

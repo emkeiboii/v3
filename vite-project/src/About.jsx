@@ -3,14 +3,24 @@ function About() {
     <div className="container half" id="about">
       <div className="about-container">
         <h2>About Me</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <p className="about-p">
+          Hey! My name is Mark Lajom, after completing highschool as a graphic
+          designer, I learned about the beautiful world of{" "}
+          <span>web development</span>. Getting to know the basics of HTML, CSS
+          and JavaScript thanks to free material on the internet such as{" "}
+          <a href="https://www.theodinproject.com/" target="_blank">
+            The Odin Project
+          </a>{" "}
+          and{" "}
+          <a href="https://www.w3schools.com/" target="_blank">
+            W3Schools
+          </a>
+          , i also dove deeper into React through a Udemy course.
+          <br />
+          <br />
+          Web development is interesting but so is <span>web design</span>, as i
+          also worked on Figma growing my knowledge on UI/UX and the platform
+          itself.
         </p>
       </div>
     </div>
