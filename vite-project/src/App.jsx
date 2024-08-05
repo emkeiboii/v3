@@ -7,6 +7,7 @@ import Hero from "./Hero";
 import NavBar from "./ui/NavBar";
 import Works from "./Works";
 import LoadingScreen from "./LoadingScreen";
+
 function App() {
   const [scrollPosition, setScrollPosition] = useState({ y: 0, lastY: 0 });
   const [hideNav, setHideNav] = useState(true);
@@ -37,23 +38,24 @@ function App() {
   useEffect(() => {
     const handleAnimationEnd = (event) => {
       if (event.animationName === "delete") {
-        // setTimeout(() => {
-        //   setHideLoading(true);
-        // }, 500);
         setHideLoading(true);
       }
     };
 
-    document
-      .querySelector(".loading-container")
-      .addEventListener("animationend", handleAnimationEnd);
+    const loadingContainer = document.querySelector(".loading-container");
+    loadingContainer.addEventListener("animationend", handleAnimationEnd);
 
     return () => {
-      document
-        .querySelector(".loading-container")
-        .removeEventListener("animationend", handleAnimationEnd);
+      loadingContainer.removeEventListener("animationend", handleAnimationEnd);
     };
   }, []);
+
+  useEffect(() => {
+    if (hideLoading) {
+      const appElement = document.querySelector(".app");
+      appElement.classList.add("fade-in-gradient");
+    }
+  }, [hideLoading]);
 
   return (
     <div className="app">

@@ -5,7 +5,7 @@
   --blue-60: rgba(169, 180, 239, 1);
   --blue-30: rgba(212, 218, 248, 1);
   --blue-10: rgba(234, 237, 253, 1);
-  --gradient-blue: rgba(29, 40, 102, 1);
+  --gradient-blue: rgba(29, 40, 102, 0.7);
 }
 
 * {
@@ -19,8 +19,7 @@
 
 body {
   background: var(--black);
-  background-image: url("../asset/noise.png"),
-    linear-gradient(var(--gradient-blue) 0%, var(--black) 5%);
+  background-image: url("../asset/noise.png");
 }
 
 h1 {
@@ -54,6 +53,15 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--black);
+  background-image: url("../asset/noise.png"),
+    linear-gradient(transparent, transparent);
+  transition: background-image 5s cubic-bezier(0.49, 0, 1, 1) forwards;
+}
+
+.fade-in-gradient {
+  background-image: url("../asset/noise.png"),
+    linear-gradient(var(--gradient-blue) 0%, var(--black) 5%);
 }
 
 .container {
@@ -245,7 +253,7 @@ span.intro {
 
 .hero-roles {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(18px, 4vw, 28px);
+  font-size: clamp(18px, 4vw, 26px);
   display: flex;
   text-decoration: none;
   width: max-content;
@@ -383,7 +391,7 @@ span.intro {
   align-items: center;
   gap: 5px;
   font-size: 13px;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 25px;
 }
 
@@ -400,13 +408,10 @@ span.intro {
 
 #logo-loading {
   width: 100px;
-  animation: shrink 0.3s ease-out 4s forwards;
+  animation: shrink 0.3s ease-out 3.5s forwards;
 }
 
 .loading-background {
-  background: var(--black);
-  background-image: url("../asset/noise.png"),
-    linear-gradient(var(--gradient-blue) 0%, var(--black) 22%);
   display: flex;
   justify-content: center;
   width: 100%;
@@ -417,14 +422,14 @@ span.intro {
 }
 
 .loading-container {
-  animation: delete 0.2s ease-out 4.1s forwards;
+  animation: delete 0.2s ease-out 3.6s forwards;
   z-index: 100;
 }
 
 .path-logo-loading {
   stroke-dasharray: 396.704;
   stroke-dashoffset: 396.704;
-  animation: dash 2s ease-out forwards, fill 0.3s ease-in 2.5s forwards;
+  animation: dash 2s ease-out forwards, fill 0.3s ease-in 2s forwards;
   fill: transparent;
 }
 
