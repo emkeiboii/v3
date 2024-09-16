@@ -50,13 +50,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    if (hideLoading) {
-      const appElement = document.querySelector(".app");
-      appElement.classList.add("fade-in-gradient");
-    }
-  }, [hideLoading]);
-
   return (
     <div className="app">
       {!hideLoading ? (

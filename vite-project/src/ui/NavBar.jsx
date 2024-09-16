@@ -25,7 +25,7 @@ function NavBar({ scrollPosition }) {
       <a
         href="/MarkLajomResume050824.pdf"
         download="Mark Lajom CV"
-        className="btn-navbar"
+        className="btn-cv"
         aria-label="Download CV"
       >
         CV

@@ -1,27 +1,22 @@
-import { RxTriangleRight } from "react-icons/rx";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Hero() {
   return (
     <div className="container full hero" id="home">
       <div className="hero-container">
-        <span className="intro">Ciao! My name is:</span>
+        <span className="intro">Ciao! My name is</span>
         <h1>Mark Lajom</h1>
-        <div className="roles-container">
-          <a href="#webDev" className="hero-roles">
-            <RxTriangleRight />
-            Frontend developer
-          </a>
-          <a href="#graphDes" className="hero-roles">
-            <RxTriangleRight />
-            Graphic designer
-          </a>
-        </div>
+        <p>
+          Studied graphic design in school and taught myself front-end
+          development.
+          <br /> Now, I bring the best of both worlds together as a{" "}
+          <span className="curr-role">Web Designer.</span>
+        </p>
         <div className="btn-container">
           <a
             href="/MarkLajomResume050824.pdf"
             download="Mark Lajom CV"
-            className="btn"
+            className="btn-cv lg"
             aria-label="Download CV"
           >
             Download CV
