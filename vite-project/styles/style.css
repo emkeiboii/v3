@@ -76,6 +76,10 @@
 }
 
 body {
+  background-color: var(--background);
+}
+
+/* body {
   background: linear-gradient(
     160deg,
     var(--background-50) 0%,
@@ -93,13 +97,19 @@ body {
       var(--background) 15%
     );
   }
+} */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  font-size: clamp(49px, 10vw, 95px);
+  font-size: clamp(61px, 10vw, 95px);
   font-family: "Satoshi", sans-serif;
   font-weight: 500;
-  background: -webkit-linear-gradient(0deg, var(--primary), var(--accent) 80%);
+  background: -webkit-linear-gradient(0deg, var(--primary), var(--accent) 70%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,6 +125,7 @@ h2 {
 
 h3 {
   font-size: 25px;
+  font-weight: 500;
 }
 
 h3.courier {
@@ -134,18 +145,13 @@ p {
 }
 
 .container {
-  display: inline-block;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   max-width: 1024px;
-  padding: 80px 25px;
   width: 100%;
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding: 100px 25px;
-  }
+  gap: 40px;
 }
 
 .container-vertical {
@@ -153,18 +159,20 @@ p {
   align-items: center;
   gap: 40px;
   max-width: 1024px;
-  padding: 150px 25px;
+  padding: 80px 25px;
   width: 100%;
   flex-direction: column;
 }
 
-.full {
-  min-height: 90svh;
-  background-color: transparent;
+@media (max-width: 1024px) {
+  .container-vertical {
+    padding: 40px 10px;
+  }
 }
 
-.half {
-  min-height: 50svh;
+.full {
+  min-height: 95svh;
+  background-color: transparent;
 }
 
 .logo {
@@ -194,6 +202,11 @@ p {
   max-width: 1080px;
   padding: 20px 30px;
   transition: padding ease-in-out 250ms;
+}
+
+.nav-container-top > div {
+  display: flex;
+  gap: 30px;
 }
 
 .scrolled {
@@ -388,6 +401,10 @@ span.intro {
   gap: 61px;
 }
 
+#about {
+  animation: fade-in 1s;
+}
+
 .about-p {
   line-height: 21px;
 }
@@ -443,6 +460,7 @@ span.intro {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding-bottom: 100px;
 }
 
 .work-section {
@@ -450,6 +468,11 @@ span.intro {
   gap: 20px;
   max-width: 1024px;
   width: 100%;
+  padding-top: 20px;
+}
+
+#works {
+  animation: fade-in 1s;
 }
 
 .description,
@@ -469,7 +492,7 @@ span.intro {
 
   .work-section {
     flex-direction: column-reverse;
-    padding: 25px;
+    padding: 25px 0;
     gap: 10px;
   }
 
@@ -481,13 +504,13 @@ span.intro {
 }
 
 .description {
-  background-color: var(--primary-500);
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
   gap: 30px;
+  border: var(--primary-700) solid 1px;
 }
 
 .description > div {
@@ -543,17 +566,38 @@ span.intro {
   align-items: center;
   gap: 5px;
   font-size: 13px;
-  margin-top: 100px;
-  margin-bottom: 25px;
+  padding-top: 80px;
+  padding-bottom: 25px;
+  width: 100%;
+  background-image: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-700) 50%,
+    var(--primary-950) 100%
+  );
 }
 
 .footer > div {
   display: flex;
-  gap: 5px;
+  padding: 10px 0 0 0;
+  gap: 20px;
 }
 
 .footer > span {
   font-family: "Courier New", Courier, monospace;
+}
+
+.footer-icons svg {
+  fill: var(--background);
+  transition: fill 250ms ease-in-out;
+}
+
+.footer-icons svg:hover {
+  fill: var(--secondary);
+}
+
+.footer > * {
+  color: var(--background);
 }
 
 /* ------------ LOADING SCREEN ------------ */
@@ -578,15 +622,15 @@ span.intro {
 }
 
 .path-logo-loading {
-  stroke-dasharray: 402.7303466796875;
-  stroke-dashoffset: 402.7303466796875;
+  stroke-dasharray: 406.9002990722656;
+  stroke-dashoffset: 406.9002990722656;
   animation: dash 2s ease-out forwards, fill 0.4s ease-in 2.2s forwards;
   fill: transparent;
 }
 
 @keyframes dash {
   from {
-    stroke-dashoffset: 402.7303466796875;
+    stroke-dashoffset: 406.9002990722656;
   }
   to {
     stroke-dashoffset: 0;
@@ -633,7 +677,7 @@ span.intro {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -643,7 +687,7 @@ span.intro {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--background);
+  background: var(--secondary);
 }
 
 /* Handle on hover */

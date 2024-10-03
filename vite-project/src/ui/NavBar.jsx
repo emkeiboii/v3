@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
 function NavBar({ scrollPosition }) {
@@ -6,30 +7,28 @@ function NavBar({ scrollPosition }) {
     <div
       className={`nav-container-top ${scrollPosition > 0 ? "scrolled" : " "}`}
     >
-      <a href="#home">
+      <NavLink to="/">
         <Logo />
-      </a>
+      </NavLink>
+      <div>
+        <ul className="nav-links">
+          <li className="links">
+            <NavLink to="/about">about</NavLink>
+          </li>
+          <li className="links">
+            <NavLink to="/works">works</NavLink>
+          </li>
+        </ul>
 
-      <ul className="nav-links">
-        <li className="links">
-          <a href="#about">about</a>
-        </li>
-        <li className="links">
-          <a href="#works">works</a>
-        </li>
-        <li className="links">
-          <a href="#contact">contact</a>
-        </li>
-      </ul>
-
-      <a
-        href="/MarkLajomResume050824.pdf"
-        download="Mark Lajom CV"
-        className="btn-cv"
-        aria-label="Download CV"
-      >
-        CV
-      </a>
+        <a
+          href="https://drive.google.com/file/d/163kUt8blVZXuvaPyXCegDIZfSWhidTDk/view?usp=sharing"
+          target="_blank"
+          className="btn-cv"
+          aria-label="Download CV"
+        >
+          CV
+        </a>
+      </div>
     </div>
   );
 }
